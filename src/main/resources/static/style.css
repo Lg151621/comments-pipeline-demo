@@ -1,0 +1,61 @@
+/* Global layout */
+body {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+}
+
+/* Headings */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Table styling */
+table {
+    width: 70%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #444;
+    padding: 8px 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* ============================== */
+/*            V2 UPDATE           */
+/*   Alternating table row colors */
+/* ============================== */
+tbody tr:nth-child(odd) {
+    background-color: #e6f2ff;  /* light blue */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Form layout */
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"] {
+    padding: 5px;
+    margin-top: 4px;
+    width: 250px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 6px 12px;
+}

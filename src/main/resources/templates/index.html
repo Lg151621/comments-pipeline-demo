@@ -5,58 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comments Application</title>
 
-    <!-- Simple inline styles for visible table -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 40px;
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
-        table {
-            width: 70%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        th, td {
-            border: 1px solid #444;
-            padding: 8px 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-
-        /* ============================== */
-        /*            V2 UPDATE           */
-        /*   Alternating table row colors */
-        /* ============================== */
-        tbody tr:nth-child(odd) {
-            background-color: #e6f2ff;  /* light blue */
-        }
-        tbody tr:nth-child(even) {
-            background-color: #ffffff;
-        }
-
-        form {
-            margin-top: 20px;
-        }
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-        input[type="text"] {
-            padding: 5px;
-            margin-top: 4px;
-            width: 250px;
-        }
-        button {
-            margin-top: 10px;
-            padding: 6px 12px;
-        }
-    </style>
+    <!-- External CSS file -->
+    <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 
 <body>
@@ -72,7 +22,7 @@
     </tr>
     </thead>
     <tbody>
-    <!-- iterStat gives us 1, 2, 3... even if there is no comment.id property -->
+    <!-- iterStat gives us 1, 2, 3... -->
     <tr th:each="comment, iterStat : ${comments}">
         <td th:text="${iterStat.index + 1}">1</td>
         <td th:text="${comment.content}">Sample comment content</td>
