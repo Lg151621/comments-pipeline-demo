@@ -29,5 +29,22 @@ public class MainController {
         // PRG pattern: redirect so refresh doesn’t resubmit the form
         return "redirect:/";
     }
- 
+
+    @GetMapping("/search")
+    public String searchComments(@RequestParam("searchTerm") String searchTerm, Model model) {
+
+        // If search term is empty, just show all comments again
+        if (searchTerm == null || searchTerm.trim().isEmpty()) {
+            model.addAttribute("comments", commentsDAO.getComments());
+        } else {
+            model.addAttribute("comments", commentsDAO.searchComments(searchTerm));
+        }
+
+        // Keep the search term in the model so we can show it back in the input if we want
+        model.addAttribute("searchTerm", searchTerm);
+
+        return "index";  // reuse the same view
+    }
+
+
 }

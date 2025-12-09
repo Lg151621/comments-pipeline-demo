@@ -83,5 +83,9 @@ public class CommentsDAO {
         return results;
     }
 
-    
+    public List<AppComment> searchComments(String searchTerm) {
+        return searchForComments(searchTerm);
+    }
+
+
 }

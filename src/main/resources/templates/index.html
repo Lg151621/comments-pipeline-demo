@@ -13,6 +13,19 @@
 
 <h1>Welcome to the Comments application!</h1>
 
+<!-- v4: search form -->
+<form th:action="@{/search}" method="get" style="margin-bottom: 20px;">
+    <label for="searchTerm">Search comments</label>
+    <input type="text"
+           id="searchTerm"
+           name="searchTerm"
+           th:value="${searchTerm}"
+           placeholder="Search by author or content">
+    <button type="submit">Search</button>
+    <a th:href="@{/}" style="margin-left: 10px;">Clear</a>
+</form>
+
+
 <!-- v1: comments displayed in a table -->
 <table>
     <thead>
