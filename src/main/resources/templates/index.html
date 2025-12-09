@@ -19,13 +19,16 @@
     <tr>
         <th>ID</th>
         <th>Content</th>
+        <th>Timestamp</th>
     </tr>
     </thead>
     <tbody>
-    <!-- iterStat gives us 1, 2, 3... -->
     <tr th:each="comment, iterStat : ${comments}">
         <td th:text="${iterStat.index + 1}">1</td>
         <td th:text="${comment.content}">Sample comment content</td>
+        <td th:text="${#temporals.format(comment.timestamp, 'yyyy-MM-dd HH:mm:ss')}">
+            Timestamp here
+        </td>
     </tr>
     </tbody>
 </table>
